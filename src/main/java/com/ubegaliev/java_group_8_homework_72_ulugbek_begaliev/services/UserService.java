@@ -33,7 +33,7 @@ public class UserService {
 
     public UserDTO getByEmail(String email) {
 
-        var user = userRepository.finByEmail(email).get();
+        var user = userRepository.findByEmail(email).get();
 
         return UserDTO.from(user);
     }
