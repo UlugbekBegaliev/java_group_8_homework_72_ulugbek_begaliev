@@ -12,43 +12,30 @@
 
     <link href="style.css" rel="stylesheet">
 
-    <title>OnlineShop by Begaliev</title>
+    <title>Chat by Begaliev</title>
 </head>
 <body>
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2" href="/" aria-label="Product">
-                <img src="/images/car.png" class="d-block mx-auto" role="img" height="24" width="24" alt="">
+            <a class="py-2" href="/" aria-label="Chat">
+                <img src="/images/chat.jpg" class="d-block mx-auto" role="img" height="24" width="24" alt="">
             </a>
 
             <a class="py-2 d-none d-md-inline-block" href="/register"><@spring.message "nav.register" /></a>
             <a class="py-2 d-none d-md-inline-block" href="/login"><@spring.message "nav.login" /></a>
-            <a class="py-2 d-none d-md-inline-block" href="/basket"><@spring.message "nav.basket" /></a>
-            <a class="py-2 d-none d-md-inline-block" href="/purchase"><@spring.message "nav.purchase" /></a>
             <a class="py-2 d-none d-md-inline-block" href="/profile"><@spring.message "nav.profile" /></a>
 
             <form class="flex box-128" action="/logout" method="post">
                 <#if _csrf??>
-                    <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
+                     <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
                 </#if>
                 <button class="py-2 d-none d-md-inline-block logout-button">
-                    <@spring.message "nav.logout" />
-                </button>
-            </form>
-            <form action="" method="get">
-                <label for="lang_select">
-                    <@spring.message "label.language" />:
-                </label>
-                <select name="lang" id="lang_select">
-                    <option value="en">English</option>
-                    <option value="ru">Русский</option>
-                </select>
-                <button type="submit">
-                    <@spring.message "button.language-change.text" />
+                    Log out
                 </button>
             </form>
         </div>
     </nav>
+
     <div class="container">
     </div>
     <#list scripts as scriptSource>
