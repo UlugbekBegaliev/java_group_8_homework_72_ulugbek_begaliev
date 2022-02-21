@@ -14,17 +14,15 @@ async function onRegisterHandler(e) {
 }
 
 async function createUser(userFormData) {
+
     const userJSON = JSON.stringify(Object.fromEntries(userFormData));
     const settings = {
         method: 'POST',
         cache: 'no-cache',
         mode : 'cors',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': csrfToken,
-        },
+        headers: {'Content-Type': 'application/json','X-CSRF-TOKEN': csrfToken,},
         body: userJSON
     };
-    await fetch(baseUrl + '/api/customers', settings);
+    await fetch(baseUrl + '/api/users', settings);
     window.location.href = baseUrl + "/login";
 }
